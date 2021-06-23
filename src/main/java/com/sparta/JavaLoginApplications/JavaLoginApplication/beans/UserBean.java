@@ -1,9 +1,11 @@
-package com.sparta.JavaEELoginApp.JavaEELoginApplication.beans;
+package com.sparta.JavaLoginApplications.JavaLoginApplication.beans;
 
-import com.sparta.JavaEELoginApp.JavaEELoginApplication.entities.User;
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import com.sparta.JavaLoginApplications.JavaLoginApplication.entities.User;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 
 @Named
 @RequestScoped

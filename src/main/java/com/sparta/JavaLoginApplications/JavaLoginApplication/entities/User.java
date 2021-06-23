@@ -1,4 +1,4 @@
-package com.sparta.JavaEELoginApp.JavaEELoginApplication.entities;
+package com.sparta.JavaLoginApplications.JavaLoginApplication.entities;
 
 public class User {
     private String username;
