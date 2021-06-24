@@ -1,7 +1,7 @@
 package com.sparta.JavaLoginApplications.JavaLoginApplication.beans;
 
-import com.sparta.JavaLoginApplications.JavaLoginApplication.entities.UsersEntity;
 
+import com.sparta.JavaLoginApplications.JavaLoginApplication.entities.UsersEntity;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;

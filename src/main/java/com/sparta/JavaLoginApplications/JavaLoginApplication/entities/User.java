@@ -3,6 +3,16 @@ package com.sparta.JavaLoginApplications.JavaLoginApplication.entities;
 public class User {
     private String username;
 
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
+    }
+
+    private Boolean isAdmin;
+
     public String getUsername() {
         return username;
     }

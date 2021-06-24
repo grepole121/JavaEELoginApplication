@@ -1,10 +1,12 @@
 package com.sparta.JavaLoginApplications.JavaLoginApplication.beans;
 
 import com.sparta.JavaLoginApplications.JavaLoginApplication.entities.User;
+import com.sparta.JavaLoginApplications.JavaLoginApplication.services.AddUserToDataBase;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.sql.SQLException;
 
 
 @Named
@@ -22,7 +24,8 @@ public class UserBean {
         this.user = user;
     }
 
-    public String addUser(){
+    public String addUser() throws SQLException {
+        AddUserToDataBase.addUserToDataBase(user);
         return "welcome";
     }
 }
