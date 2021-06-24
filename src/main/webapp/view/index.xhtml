@@ -14,10 +14,13 @@
             <ui:define name="content">
                 <h:form>
                     <h:panelGrid columns="2">
-                        <h:outputLabel value="Enter your name: "></h:outputLabel>
-                        <h:inputText value="#{userBean.user.username}"></h:inputText>
-                        <h:commandButton value="submit" action="#{userBean.addUser}"></h:commandButton>
+                            <h:outputLabel value="Username: "></h:outputLabel>
+                            <h:inputText value="#{userBean.user.username}"></h:inputText>
+                            <h:outputLabel value ="Password: "></h:outputLabel>
+                            <h:inputSecret value="#{userBean.user.password}"></h:inputSecret>
+                            <h:commandButton value="Submit" action="#{userBean.addUser}"></h:commandButton>
                     </h:panelGrid>
+                    <h:commandLink value="Register Here" action="#{registerBean.getRegisterForm}"></h:commandLink>
                 </h:form>
             </ui:define>
         </ui:composition>

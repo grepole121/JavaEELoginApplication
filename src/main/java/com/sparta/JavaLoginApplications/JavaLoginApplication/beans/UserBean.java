@@ -23,6 +23,8 @@ public class UserBean {
     }
 
     public String addUser(){
-        return "welcome";
+
+        return "admin";
     }
+
 }

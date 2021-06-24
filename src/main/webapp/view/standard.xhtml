@@ -6,15 +6,10 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <ui:composition>
-        <div class="header">
-            <div class="logo">
-                <h:graphicImage library="images" name="SpartaLogo.jpg" width="50" height="50"></h:graphicImage>
-            </div>
-            <div class="headerTitle">
-                <h1>Login Application</h1>
-            </div>
-        </div>
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
+        <ui:define name="content">
+            <h:outputLabel>Welcome #{userBean.user.username}</h:outputLabel>
+        </ui:define>
     </ui:composition>
 </f:view>
 </html>
