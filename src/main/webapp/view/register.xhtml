@@ -9,6 +9,26 @@
    <ui:composition template="/WEB-INF/templates/template.xhtml">
       <ui:define name="content">
          <h:outputLabel>Register Form</h:outputLabel>
+         <br/><br/>
+
+         <h:form>
+            <h:panelGrid columns="3">
+               <h:outputLabel value="Username:"></h:outputLabel>
+               <h:inputText value="#{userBean.user.username}"></h:inputText>
+               <br/><br/>
+
+               <h:outputLabel value="Password:"></h:outputLabel>
+               <h:inputText value="#{userBean.user.password}"></h:inputText>
+               <br/><br/>
+
+               <h:outputLabel value="Re-type Password:"></h:outputLabel>
+               <h:inputText value="#{userBean.user.password}"></h:inputText>
+               <br/><br/>
+
+               <h:commandButton value="Register"></h:commandButton>
+            </h:panelGrid>
+         </h:form>
+
       </ui:define>
    </ui:composition>
 </f:view>

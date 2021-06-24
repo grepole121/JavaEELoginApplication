@@ -7,10 +7,21 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
     <ui:composition>
+
         <div class="header">
-            <div class="logo">
-                <h:graphicImage library="images" name="SpartaLogo.jpg" width="50" height="50"></h:graphicImage>
-            </div>
+            <h:panelGrid columns="5">
+                <div class="logo">
+                    <h:commandLink>
+                        <a href="/JavaLoginApplication-1.0-SNAPSHOT/view/welcome.xhtml">
+                            <h:graphicImage library="images" name="SpartaLogo.jpg" width="50"
+                                            height="50"></h:graphicImage>
+                        </a>
+                    </h:commandLink>
+                </div>
+                <a href="/JavaLoginApplication-1.0-SNAPSHOT/view/welcome.xhtml">Home</a>
+<!--                <a href="/JavaLoginApplication-1.0-SNAPSHOT/view/index.xhtml">Log out</a>-->
+
+            </h:panelGrid>
             <div class="headerTitle">
                 <h1>Login Application</h1>
             </div>
