@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+  <ui:define name="content">
+    <h:messages id="messages" globalOnly="true" showDetail="false" />
+
+    <div class="form">
+      <h:form style="position: center">
+        <h:panelGrid columns="2">
+          <h:outputLabel  value="ENTER NAME"/>
+          <h:inputText id="name"/>
+          <h:outputLabel value="ENTER PASSWORD"/>
+          <h:inputSecret id="password"/>
+          <h:outputLabel value="ROLE?"/>
+          <h:inputText id="role"/>
+          <h:outputLabel value=""/>
+          <h:commandButton style="color: black; background-color: white;
+            text-align: center;position: center" value="SUBMIT"
+                           action="#{loginService.registration(name,password,role)}"/>
+        </h:panelGrid>
+      </h:form>
+    </div>
+  </ui:define>
+</ui:composition>
+</body>
+</html>
