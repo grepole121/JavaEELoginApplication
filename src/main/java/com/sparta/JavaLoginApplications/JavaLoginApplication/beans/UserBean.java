@@ -5,6 +5,7 @@ import com.sparta.JavaLoginApplications.JavaLoginApplication.services.UsersRepos
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -16,11 +17,41 @@ import javax.security.enterprise.credential.UsernamePasswordCredential;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileWriter;
 import java.io.IOException;
 
 @Named
 @RequestScoped
 public class UserBean {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    private String password;
+    private String role;
+
     @Inject
     User user;
     @Inject
@@ -93,6 +124,14 @@ public class UserBean {
        }
         facesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "index.xhtml?faces-redirect=true";
+    }
+
+    public String registration() throws IOException {
+        userRepo.addUser(name,password,role);
+        FileWriter myWriter = new FileWriter("filename.txt");
+        myWriter.write(userRepo.getUsers().toString());
+        myWriter.close();
+        return "admin_page.xhtml?faces-redirect=true";
     }
 }
 
