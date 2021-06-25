@@ -71,7 +71,9 @@ public class UserBean {
                 break;
             case SUCCESS:
                 try {
-                    externalContext.redirect(externalContext.getRequestContextPath() + "/view/welcome.xhtml");
+
+                        externalContext.redirect(externalContext.getRequestContextPath() + "/view/welcome.xhtml");
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

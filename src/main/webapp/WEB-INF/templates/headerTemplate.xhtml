@@ -8,13 +8,22 @@
 <f:view>
     <ui:composition>
         <div class="header">
-            <div class="logo">
-                <h:graphicImage library="images" name="SpartaLogo.jpg" width="200" height="200"></h:graphicImage>
-            </div>
+            <h:panelGrid columns="5">
+                <div class="logo">
+                    <h:commandLink>
+                        <a href="/JavaLoginApplication-1.0-SNAPSHOT/view/welcome.xhtml">
+                            <h:graphicImage library="images" name="SpartaLogo.jpg" width="50"
+                                            height="50"></h:graphicImage>
+                        </a>
+                    </h:commandLink>
+                </div>
+                <a href="/JavaLoginApplication-1.0-SNAPSHOT/view/welcome.xhtml">Home</a>
+            </h:panelGrid>
             <div class="headerTitle">
                 <h1>Login Application</h1>
             </div>
         </div>
+
     </ui:composition>
 </f:view>
 </html>
