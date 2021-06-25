@@ -4,12 +4,12 @@ import com.sparta.JavaLoginApplications.JavaLoginApplication.entities.User;
 import com.sparta.JavaLoginApplications.JavaLoginApplication.entities.UsersEntity;
 
 
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 import java.util.ArrayList;
-
 
 public class UsersRepository {
     private ArrayList<UsersEntity> validUsers = new ArrayList<>();
-
     {
         addUser("Adrian", "password", "ADMIN");
         addUser("George", "password", "ADMIN");

@@ -29,7 +29,6 @@ public class DataStore implements IdentityStore {
                     roles.add("USER");
                     return new CredentialValidationResult(userRepo.getUsers().get(i).getName(), roles);
                 }
-
             }
         }
         return CredentialValidationResult.NOT_VALIDATED_RESULT;

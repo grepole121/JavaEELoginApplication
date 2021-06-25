@@ -43,24 +43,6 @@ public class UserBean {
         return user;
     }
 
-    //check if user is valid
-    public String validUserCheck(){
-        String name = getUser().getName();
-        String password = getUser().getPassword();
-        String output = "index";
-        for (int i =0; i<userRepo.getUsers().size();i++){
-            if (name.equals(userRepo.getUsers().get(i).getName())
-                    && (password.equals(userRepo.getUsers().get(i).getPassword()))) {
-                getUser().setRole(userRepo.getUsers().get(i).getRole());
-                //continueAuthentication();
-                output = "view/welcome.xhtml";
-                return output;
-            }
-        }
-        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "INVALID LOGIN",null));
-        return output;
-    }
-
     public void submit() {
         switch (continueAuthentication()) {
             case SEND_CONTINUE:
@@ -85,14 +67,8 @@ public class UserBean {
     }
 
     public String logout() {
-        ExternalContext externalContext = facesContext.getExternalContext();
-       try {
-          ((HttpServletRequest)externalContext.getRequest()).logout();
-      } catch (ServletException e) {
-          e.printStackTrace();
-       }
-        facesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "index.xhtml?faces-redirect=true";
+      facesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/index.xhtml?faces-redirect=true";
     }
 }
 
